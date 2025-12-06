@@ -23,6 +23,7 @@ La configuración se organiza en tres áreas principales que definen el comporta
   - **`problem_solving/`**: Guías para la resolución de errores conocidos.
   - **`proyect_rules/`**: Reglas de negocio y arquitectónicas específicas de Iris.
 
-> [!NOTE] > **Atribución**
+> [!NOTE]
+> **Atribución**
 >
 > La arquitectura y filosofía de este directorio ("Arsenal") está basada en la metodología presentada por [José Ibáñez Bengoechea](https://es.linkedin.com/in/jos%C3%A9-ib%C3%A1%C3%B1ez-bengoechea-08a64392) en su charla de GDG.
