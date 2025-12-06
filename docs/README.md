@@ -1,0 +1,1 @@
+Esta carpeta almacena la documentación del proyecto hecha por la IA.
