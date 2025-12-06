@@ -1,3 +1,7 @@
 docs/*
 !docs/README.md
 !docs/general_rules/
+!docs/libraries/.gitkeep
+!docs/examples/.gitkeep
+!docs/proyect_rules/.gitkeep
+
