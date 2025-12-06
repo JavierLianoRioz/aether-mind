@@ -26,4 +26,4 @@ La configuración se organiza en tres áreas principales que definen el comporta
 > [!NOTE]
 > **Atribución**
 >
-> La arquitectura y filosofía de este directorio está basada en la metodología presentada por [José Ibáñez Bengoechea](https://es.linkedin.com/in/jos%C3%A9-ib%C3%A1%C3%B1ez-bengoechea-08a64392) en su charla de GDG.
+> La arquitectura y filosofía de este directorio está basada en la metodología presentada por [José Ibáñez Bengoechea](https://es.linkedin.com/in/jos%C3%A9-ib%C3%A1%C3%B1ez-bengoechea-08a64392) en su charla de [GDG Santander](https://www.linkedin.com/posts/gdg-santander-es_nanobanana-sobaofest-activity-7386753931265085441-yn8_?utm_source=share&utm_medium=member_desktop&rcm=ACoAAFtZLbkBHQWCvmC59tef6poxutJ_XSx59n8).
