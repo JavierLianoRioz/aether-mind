@@ -16,3 +16,9 @@ docs/examples/*
 !docs/proyect_rules/
 docs/proyect_rules/*
 !docs/proyect_rules/.gitkeep
+
+# Keep problem_solving folder but ignore contents
+!docs/problem_solving/
+docs/problem_solving/*
+!docs/problem_solving/.gitkeep
+
