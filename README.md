@@ -14,14 +14,14 @@ La configuración se organiza en tres áreas principales que definen el comporta
 
 - **`features/`**: Contexto específico para el desarrollo de funcionalidades.
 
-  - **`plans/`**: Planes de implementación detallados generados por el agente (via `/create-plan`).
+  - **`plans/`**: Planes de implementación detallados generados por el agente.
   - **`prompts/`**: Instrucciones base para iniciar nuevas funcionalidades.
 
 - **`docs/`**: Base de conocimiento técnico y reglas del proyecto.
-  - **`general_rules/`**: Estándares de Clean Code y principios de diseño.
-  - **`libraries/`**: Documentación específica de las tecnologías usadas en Iris (FastAPI, React, n8n, etc.).
+  - **`general_rules/`**: Reglas generales del equipo o individuo
+  - **`libraries/`**: Documentación específica de las tecnologías usadas.
   - **`problem_solving/`**: Guías para la resolución de errores conocidos.
-  - **`proyect_rules/`**: Reglas de negocio y arquitectónicas específicas de Iris.
+  - **`proyect_rules/`**: Reglas del proyecto.
 
 > [!NOTE]
 > **Atribución**
