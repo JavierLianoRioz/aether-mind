@@ -1,7 +1,18 @@
 docs/*
 !docs/README.md
 !docs/general_rules/
-!docs/libraries/.gitkeep
-!docs/examples/.gitkeep
-!docs/proyect_rules/.gitkeep
 
+# Keep libraries folder but ignore contents
+!docs/libraries/
+docs/libraries/*
+!docs/libraries/.gitkeep
+
+# Keep examples folder but ignore contents
+!docs/examples/
+docs/examples/*
+!docs/examples/.gitkeep
+
+# Keep proyect_rules folder but ignore contents
+!docs/proyect_rules/
+docs/proyect_rules/*
+!docs/proyect_rules/.gitkeep
