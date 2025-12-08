@@ -6,6 +6,7 @@ triggers:
   - add command
   - nuevo comando
 ---
+
 # Agregar Nuevo Comando
 
 Este comando guía al agente en la creación de nuevos comandos y workflows para Antigravity.
@@ -13,6 +14,7 @@ Este comando guía al agente en la creación de nuevos comandos y workflows para
 ## Prerrequisitos
 
 Debes obtener la siguiente información del usuario:
+
 1.  **Nombre del Comando**: (ej. `generar-tests`, `analizar-logs`).
 2.  **Descripción**: Breve descripción de lo que hace.
 3.  **Triggers**: Lista de disparadores (slash commands o frases).
@@ -22,7 +24,7 @@ Debes obtener la siguiente información del usuario:
 
 ### 1. Crear Definición del Comando
 
-Crea un archivo en `ai/toolkit/commands/<nombre_comando_snake_case>.md`.
+Crea un archivo en `aether-mind/toolkit/commands/<nombre_comando_snake_case>.md`.
 
 **Formato:**
 
@@ -34,38 +36,18 @@ triggers:
   - /<trigger_principal>
   - <otros triggers>
 ---
+
 # <Título del Comando>
 
 <Instrucciones detalladas para el agente>
-```
-
-### 2. Crear Workflow
-
-Crea un archivo en `.agent/workflows/<nombre-comando-kebab-case>.md`.
-
-**Formato:**
-
-```markdown
----
-name: <nombre-comando-kebab-case>
-description: <descripción>
-triggers:
-  - /<trigger_principal>
----
-# <Título del Workflow>
-
-Este workflow ejecuta las instrucciones definidas en:
-`ai/toolkit/commands/<nombre_comando_snake_case>.md`
-
-Por favor, lee y sigue estrictamente las reglas definidas en ese archivo.
 ```
 
 ## Ejemplo
 
 Si el usuario quiere un comando para "optimizar imágenes":
 
-1.  **Toolkit**: `ai/toolkit/commands/optimize_images.md`
-2.  **Workflow**: `.agent/workflows/optimize-images.md`
+1.  **Toolkit**: `aether-mind/toolkit/commands/optimize_images.md`
+2.  Ejecuta `/sync-commands` para generar el workflow automáticamente.
 
 ## Verificación
 
