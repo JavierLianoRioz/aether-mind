@@ -5,6 +5,7 @@ triggers:
   - /git_commit
   - git commit
 ---
+
 # Git Commit Command
 
 Este comando instruye al agente para realizar un commit siguiendo las estrictas reglas de calidad del repositorio Iris y gestionar la integración de la rama.
@@ -13,20 +14,25 @@ Este comando instruye al agente para realizar un commit siguiendo las estrictas 
 
 1.  **Atomicidad**: El commit debe contener un único cambio lógico.
 2.  **Conventional Commits**: `tipo(alcance): descripción`.
-    -   Tipos: `feat`, `fix`, `docs`, `style`, `refactor`, `perf`, `test`, `chore`.
-    -   Ejemplo: `feat(auth): implementa login con google`.
+    - Tipos: `feat`, `fix`, `docs`, `style`, `refactor`, `perf`, `test`, `chore`.
+    - Ejemplo: `feat(auth): implementa login con google`.
 3.  **Descripción**: Imperativo, claro, sin puntos finales, en **Español**.
 4.  **Flujo de Trabajo**: NO hacer `git push`. Se debe hacer commit en la rama actual y luego fusionar (merge) en la rama dependiente (ej. `develop` o `main`).
 
 ## Pasos para el Agente
+
 1.  **Estado**: Revisa cambios (`git status`, `git diff`).
-2.  **Commit**:
+2.  **Rama Lógica**:
+    - Analiza los cambios para determinar un nombre de rama lógico y descriptivo (ej. `feat/auth-login`, `fix/typo-readme`).
+    - Crea y cambia a la nueva rama: `git checkout -b <rama-logica>`.
+3.  **Commit**:
     ```bash
     git add .
     git commit -m "tipo(alcance): descripción"
     ```
-3.  **Integración**:
-    -   Identifica la ramas de destino (rama padre/dependiente, usualmente `develop`).
-    -   Cambia a la rama destino: `git checkout develop` (o la que corresponda).
-    -   Fusiona la rama de trabajo: `git merge <rama-origen>`.
-    -   **Nota**: Si hay conflictos, resuélvelos antes de completar el merge.
+4.  **Integración**:
+    - Identifica la rama de destino (rama padre/dependiente, usualmente `develop` o `main`).
+    - Cambia a la rama destino: `git checkout <rama-destino>`.
+    - Fusiona la rama lógica: `git merge <rama-logica>`.
+    - **Nota**: Si hay conflictos, resuélvelos antes de completar el merge.
+    - (Opcional) Elimina la rama lógica si ya no es necesaria: `git branch -d <rama-logica>`.
