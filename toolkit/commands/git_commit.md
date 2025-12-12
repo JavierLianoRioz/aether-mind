@@ -8,31 +8,32 @@ triggers:
 
 # Git Commit Command
 
-Este comando instruye al agente para realizar un commit siguiendo las estrictas reglas de calidad del repositorio Iris y gestionar la integración de la rama.
+Este comando instruye al agente para realizar commits siguiendo estrictamente las reglas de atomicidad y lógica defindas por el usuario.
 
 ## Reglas Fundamentales
 
-1.  **Atomicidad**: El commit debe contener un único cambio lógico.
-2.  **Conventional Commits**: `tipo(alcance): descripción`.
+1.  **Atomicidad Estricta**: Los commits deben hacerse UNO POR UNO. Cada commit debe representar un único cambio lógico.
+2.  **Agrupación Lógica**:
+    - **NO** agrupar archivos que no tengan relación entre sí.
+    - **NO** separar archivos que dependan lógicamente el uno del otro (ej. un test y la funcionalidad que prueba).
+3.  **Conventional Commits**: `tipo(alcance): descripción`.
     - Tipos: `feat`, `fix`, `docs`, `style`, `refactor`, `perf`, `test`, `chore`.
     - Ejemplo: `feat(auth): implementa login con google`.
-3.  **Descripción**: Imperativo, claro, sin puntos finales, en **Español**.
-4.  **Flujo de Trabajo**: NO hacer `git push`. Se debe hacer commit en la rama actual y luego fusionar (merge) en la rama dependiente (ej. `develop` o `main`).
+4.  **Descripción**: Imperativo, claro, sin puntos finales, en **Español**.
 
 ## Pasos para el Agente
 
-1.  **Estado**: Revisa cambios (`git status`, `git diff`).
-2.  **Rama Lógica**:
-    - Analiza los cambios para determinar un nombre de rama lógico y descriptivo (ej. `feat/auth-login`, `fix/typo-readme`).
-    - Crea y cambia a la nueva rama: `git checkout -b <rama-logica>`.
-3.  **Commit**:
-    ```bash
-    git add .
-    git commit -m "tipo(alcance): descripción"
-    ```
-4.  **Integración**:
-    - Identifica la rama de destino (rama padre/dependiente, usualmente `develop` o `main`).
-    - Cambia a la rama destino: `git checkout <rama-destino>`.
-    - Fusiona la rama lógica: `git merge <rama-logica>`.
-    - **Nota**: Si hay conflictos, resuélvelos antes de completar el merge.
-    - (Opcional) Elimina la rama lógica si ya no es necesaria: `git branch -d <rama-logica>`.
+1.  **Análisis de Cambios**:
+
+    - Ejecuta `git status` y `git diff` para entender todos los cambios pendientes.
+    - Identifica mentalmente los grupos de archivos que deben ir juntos en un mismo commit.
+
+2.  **Ejecución de Commits (Iterativo)**:
+
+    - Para CADA grupo lógico de cambios identificado:
+      a. Selecciona los archivos específicos: `git add <archivo1> <archivo2> ...` (NUNCA usar `git add .` a menos que TODOS los archivos sean parte del mismo cambio lógico único).
+      b. Realiza el commit: `git commit -m "tipo(alcance): descripción"`.
+    - Repite este proceso hasta que no queden cambios pendientes por commitear (working tree clean).
+
+3.  **Verificación**:
+    - Asegúrate de que `git status` indique que no hay nada más pendiente.
